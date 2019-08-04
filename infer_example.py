@@ -36,7 +36,7 @@ class Inferer:
         aspect_seqs = [self.tokenizer.text_to_sequence('null')] * len(raw_texts)
         context_indices = torch.tensor(context_seqs, dtype=torch.int64).to(self.opt.device)
         aspect_indices = torch.tensor(aspect_seqs, dtype=torch.int64).to(self.opt.device)
-        print(aspect_seqs)
+        
         t_inputs = [context_indices, aspect_indices]
         t_outputs = self.model(t_inputs)
 
