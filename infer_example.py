@@ -55,7 +55,7 @@ if __name__ == '__main__':
     model_state_dict_paths = {
         'atae_lstm': 'state_dict/atae_lstm_restaurant_acc0.7786',
         'ian': 'state_dict/ian_restaurant_val_acc0.65',
-        'memnet': 'state_dict/memnet_restaurant_acc0.8402',
+        'memnet': 'state_dict/memnet_restaurant_val_acc0.7045',
         'aoa': 'state_dict/aoa_restaurant_acc0.8063',
     }
     class Option(object): pass
