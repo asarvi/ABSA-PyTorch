@@ -39,7 +39,7 @@ class Inferer:
         
         t_inputs = [context_indices, aspect_indices]
         t_outputs = self.model(t_inputs)
-
+        print(t_outputs)
         t_probs = F.softmax(t_outputs, dim=-1).cpu().numpy()
         return t_probs
 
@@ -77,4 +77,4 @@ if __name__ == '__main__':
 
     inf = Inferer(opt)
     t_probs = inf.evaluate(['happy memory', 'good service', 'just normal food'])
-    print(t_probs)
+    print(t_probs.argmax(axis=-1) - 1)
