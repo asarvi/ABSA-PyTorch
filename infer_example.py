@@ -77,4 +77,4 @@ if __name__ == '__main__':
 
     inf = Inferer(opt)
     t_probs = inf.evaluate(['happy memory', 'bad service', 'just normal food'])
-    print(t_probs.argmax(axis=-1) - 1)
+    print(t_probs)
