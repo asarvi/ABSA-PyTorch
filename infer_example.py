@@ -60,7 +60,7 @@ if __name__ == '__main__':
     }
     class Option(object): pass
     opt = Option()
-    opt.model_name = 'ian'
+    opt.model_name = 'memnet'
     opt.model_class = model_classes[opt.model_name]
     opt.dataset = 'restaurant'
     opt.dataset_file = {
