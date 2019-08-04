@@ -76,5 +76,5 @@ if __name__ == '__main__':
     opt.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     inf = Inferer(opt)
-    t_probs = inf.evaluate(['happy memory', 'bad service', 'just normal food'])
+    t_probs = inf.evaluate(['happy memory', 'good service', 'just normal food'])
     print(t_probs)
