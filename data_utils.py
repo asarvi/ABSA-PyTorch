@@ -13,7 +13,7 @@ from pytorch_pretrained_bert import BertTokenizer
 
 def build_tokenizer(fnames, max_seq_len, dat_fname):
     if os.path.exists(dat_fname):
-        print('loading tokenizer:', dat_fname)
+       # print('loading tokenizer:', dat_fname)
         tokenizer = pickle.load(open(dat_fname, 'rb'))
     else:
         text = ''
@@ -45,15 +45,15 @@ def _load_word_vec(path, word2idx=None):
 
 def build_embedding_matrix(word2idx, embed_dim, dat_fname):
     if os.path.exists(dat_fname):
-        print('loading embedding_matrix:', dat_fname)
+        #print('loading embedding_matrix:', dat_fname)
         embedding_matrix = pickle.load(open(dat_fname, 'rb'))
     else:
-        print('loading word vectors...')
+        #print('loading word vectors...')
         embedding_matrix = np.zeros((len(word2idx) + 2, embed_dim))  # idx 0 and len(word2idx)+1 are all-zeros
         fname = './glove.twitter.27B/glove.twitter.27B.' + str(embed_dim) + 'd.txt' \
-            if embed_dim != 300 else './glove.42B.300d.txt'
+            if embed_dim != 300 else 'ABSA/glove.42B.300d.txt'
         word_vec = _load_word_vec(fname, word2idx=word2idx)
-        print('building embedding_matrix:', dat_fname)
+       # print('building embedding_matrix:', dat_fname)
         for word, i in word2idx.items():
             vec = word_vec.get(word)
             if vec is not None:
